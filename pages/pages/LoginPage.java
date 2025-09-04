@@ -4,6 +4,8 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
@@ -26,14 +28,23 @@ public class LoginPage {
 
     // Methods
     public void enterEmail(String email) {
-        driver.findElement(emailField).sendKeys(email);
+     // driver.findElement(emailField).sendKeys(email);
+        WebElement emailBox = wait.until(ExpectedConditions.visibilityOfElementLocated(emailField));
+        emailBox.clear();
+        emailBox.sendKeys(email);   
     }
 
     public void enterPassword(String password) {
-        driver.findElement(passwordField).sendKeys(password);
+     // driver.findElement(passwordField).sendKeys(password);
+        WebElement passwordBox = wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField));
+        passwordBox.clear();
+        passwordBox.sendKeys(password);	
     }
 
-    public void clickLogin() {
-        driver.findElement(loginButton).click();
+    public HomePage clickLogin() {
+      //  driver.findElement(loginButton).click();
+        WebElement loginBtn = wait.until(ExpectedConditions.elementToBeClickable(loginButton));
+        loginBtn.click();
+        return new HomePage(driver , wait);
     }
 }

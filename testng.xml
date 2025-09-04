@@ -4,6 +4,7 @@
     <test name="DemoWebShop Tests">
         <classes>
             <!-- اینجا کلاس تست‌هامون رو اضافه می‌کنیم -->
+              <class name="tests.LoginTest"/>
         </classes>
     </test>
 </suite>
