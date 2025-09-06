@@ -1,7 +1,6 @@
 package pages;
 
 import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,9 +13,10 @@ public class LoginPage {
     WebDriverWait wait;
 
     // Constructor
-    public LoginPage(WebDriver driver , WebDriverWait wait  ) {
+    public LoginPage(WebDriver driver ) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));  
+
         }
     
 
@@ -25,6 +25,7 @@ public class LoginPage {
     By passwordField = By.id("Password");
     By loginButton = By.cssSelector("input[value='Log in']");
         //By.xpath("//input[@value= 'Log in']")
+    By errorMessage = By.cssSelector(".message-error");
 
     // Methods
     public void enterEmail(String email) {
@@ -43,8 +44,21 @@ public class LoginPage {
 
     public HomePage clickLogin() {
       //  driver.findElement(loginButton).click();
-        WebElement loginBtn = wait.until(ExpectedConditions.elementToBeClickable(loginButton));
+        WebElement loginBtn = wait.until(ExpectedConditions.presenceOfElementLocated(loginButton));
         loginBtn.click();
-        return new HomePage(driver , wait);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ico-logout") )) ;    //a[@class='ico-logout']         .ico-logout   
+        return new HomePage(driver);
+       
     }
+    
+    public boolean isLoginErrorVisible() {
+        try {
+            WebElement errorMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessage));
+            return errorMsg.isDisplayed(); 
+        } catch (Exception e) {
+            return false; 
+        }
+    }
+    
+   
 }

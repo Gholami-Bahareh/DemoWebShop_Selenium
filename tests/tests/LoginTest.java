@@ -1,15 +1,15 @@
 
 package tests;
 
-import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import pages.HomePage;
 import pages.LoginPage;
 
 public class LoginTest {
@@ -22,17 +22,28 @@ public class LoginTest {
     public void setup() {
         System.setProperty("webdriver.chrome.driver","D:\\213\\0 Real world Real job!\\Matherial for QA\\Java Selenium\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
         driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.get("https://demowebshop.tricentis.com/login");
-        loginPage = new LoginPage(driver, wait);
+        loginPage = new LoginPage(driver);
+        driver.manage().window().maximize();
     }
 
     @Test
     public void testLogin() {
-        loginPage.enterEmail("test@example.com");
-        loginPage.enterPassword("Password123");
+        loginPage.enterEmail("bahareh.r2m2@gmail.com");
+        loginPage.enterPassword("123456");
+        
+        HomePage homePage = loginPage.clickLogin();
+
+        Assert.assertTrue(homePage.isLogoutVisible(), "کاربر باید لاگین شده باشد");
+    }
+    
+    @Test
+    public void invalidtestLogin() {
+        loginPage.enterEmail("invalid@gmail.com");
+        loginPage.enterPassword("000");
         loginPage.clickLogin();
-        // می‌تونی اینجا assert اضافه کنی برای بررسی اینکه HomePage باز شده
+        
+        Assert.assertTrue(loginPage.isLoginErrorVisible(), "Erroe message should be shown");
     }
 
     @AfterClass
