@@ -46,10 +46,18 @@ public class LoginPage {
       //  driver.findElement(loginButton).click();
         WebElement loginBtn = wait.until(ExpectedConditions.presenceOfElementLocated(loginButton));
         loginBtn.click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ico-logout") )) ;    //a[@class='ico-logout']         .ico-logout   
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ico-logout") )) ;    //a[@class='ico-logout']    
         return new HomePage(driver);
        
     }
+    
+    public void clickLoginExpectingFailure() {
+        //  driver.findElement(loginButton).click();
+          WebElement loginBtn = wait.until(ExpectedConditions.presenceOfElementLocated(loginButton));
+          loginBtn.click();
+          
+         
+      }
     
     public boolean isLoginErrorVisible() {
         try {

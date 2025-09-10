@@ -20,7 +20,7 @@ public class LoginTest {
 
     @BeforeClass
     public void setup() {
-        System.setProperty("webdriver.chrome.driver","D:\\213\\0 Real world Real job!\\Matherial for QA\\Java Selenium\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","D:\\chromedriver-win64\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://demowebshop.tricentis.com/login");
         loginPage = new LoginPage(driver);
@@ -28,7 +28,7 @@ public class LoginTest {
     }
 
     @Test
-    public void testLogin() {
+    public void validtestLogin() {
         loginPage.enterEmail("bahareh.r2m2@gmail.com");
         loginPage.enterPassword("123456");
         
@@ -41,7 +41,7 @@ public class LoginTest {
     public void invalidtestLogin() {
         loginPage.enterEmail("invalid@gmail.com");
         loginPage.enterPassword("000");
-        loginPage.clickLogin();
+        loginPage.clickLoginExpectingFailure();
         
         Assert.assertTrue(loginPage.isLoginErrorVisible(), "Erroe message should be shown");
     }
