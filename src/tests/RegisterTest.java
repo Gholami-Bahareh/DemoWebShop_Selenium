@@ -31,9 +31,9 @@ public class RegisterTest {
 		 registerpage.selectMaleGender();
 		 registerpage.enterFirstName("rrr");
 		 registerpage.enterLastName("eee");
-		 registerpage.enterEmail("bnh.r2m2@gmail.com");
-		 registerpage.enterPassword("225588");
-		 registerpage.enterConfirmPassword("225588");
+		 registerpage.enterEmail("bnh.r2rrrrm2@gmail.com");
+		 registerpage.enterPassword("2255r88");
+		 registerpage.enterConfirmPassword("2255r88");
 		 registerpage.clickRegister();
 		 
 		 Assert.assertTrue(registerpage.seeSuccessMessage(),"be successfull");

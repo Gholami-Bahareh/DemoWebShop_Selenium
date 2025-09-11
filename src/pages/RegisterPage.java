@@ -68,6 +68,10 @@ public class RegisterPage {
            emailBox.sendKeys(email);   
        }
     
+    
+
+    
+   
     public void enterPassword(String password) {
         WebElement passwordBox = wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField));
         passwordBox.clear();
