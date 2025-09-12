@@ -35,6 +35,7 @@ public class RegisterPage {
     By emailError= By.xpath("//span[@for='Email']");
     By passwordError= By.xpath("//span[@for='Password']");
     By confirmPasswordError= By.xpath("//span[@for='ConfirmPassword']");
+    By duplicateEmailError = By.cssSelector("div[class='validation-summary-errors']");
     
   
     
@@ -86,6 +87,7 @@ public class RegisterPage {
         
     }
     
+    
     public boolean seeSuccessMessage() {
     	try {
         WebElement successText = wait.until(ExpectedConditions.visibilityOfElementLocated(resultText));
@@ -95,49 +97,39 @@ public class RegisterPage {
         }
     }
     
-    public boolean isFirstNameErrorVisible() {
+    private boolean isErrorVisible(By locator) {
     	try {
-        WebElement successText = wait.until(ExpectedConditions.visibilityOfElementLocated(firstNameError));
+        WebElement successText = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         return successText.isDisplayed();   
     	} catch (Exception e) {
             return false; 
         }
+    }
+    
+    
+    
+    public boolean isFirstNameErrorVisible() {
+    	return isErrorVisible(firstNameError);
     }
     
     public boolean isLastNameErrorVisible() {
-    	try {
-        WebElement successText = wait.until(ExpectedConditions.visibilityOfElementLocated(lastNameError));
-        return successText.isDisplayed();   
-    	} catch (Exception e) {
-            return false; 
-        }
+    	return isErrorVisible(lastNameError);
     }
     
     public boolean isEmailErrorVisible() {
-    	try {
-        WebElement successText = wait.until(ExpectedConditions.visibilityOfElementLocated(emailError));
-        return successText.isDisplayed();   
-    	} catch (Exception e) {
-            return false; 
-        }
+    	return isErrorVisible(emailError);
     }
     
     public boolean isPasswordErrorVisible() {
-    	try {
-        WebElement successText = wait.until(ExpectedConditions.visibilityOfElementLocated(passwordError));
-        return successText.isDisplayed();   
-    	} catch (Exception e) {
-            return false; 
-        }
+    	return isErrorVisible(passwordError);
     }
     
     public boolean isConfirmPasswordErrorVisible() {
-    	try {
-        WebElement successText = wait.until(ExpectedConditions.visibilityOfElementLocated(confirmPasswordError));
-        return successText.isDisplayed();   
-    	} catch (Exception e) {
-            return false; 
-        }
+    	return isErrorVisible(confirmPasswordError);
+    }
+    
+    public boolean isDuplicateEmailErrorVisible() {
+    	return isErrorVisible(duplicateEmailError);
     }
     }
 

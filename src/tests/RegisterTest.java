@@ -21,8 +21,7 @@ public class RegisterTest {
 	 String email;
 	 
 
-	//پر کردن فرم با داده‌های درست و ثبت موفقیت‌آمیز
-	//بررسی اینکه فیلدهای ضروری خالی باشن و خطا نمایش داده بشه
+	
 	//بررسی اعتبار ایمیل یا پسورد (مثلاً کوتاه بودن یا بدون کاراکتر خاص)
 	//انتخاب جنسیت و اطمینان از اینکه سیستم انتخاب رو درست ثبت می‌کنه
 	//بررسی اینکه دکمه ثبت فعال یا غیر فعال باشه در شرایط مختلف
@@ -74,7 +73,32 @@ public class RegisterTest {
 		 Assert.assertTrue(registerpage.seeSuccessMessage(),"be successfull");
 		 Assert.assertTrue(driver.getCurrentUrl().contains("registerresult"), "Url contains 'registerresult'");
 	             
- }
+     }
+	 @Test
+	   public void registerWithDuplicateEmail() {
+		// --- Arrange:first time register
+		 registerpage.selectFemaleGender();
+		 registerpage.enterFirstName("rrr");
+		 registerpage.enterLastName("eee");
+		 registerpage.enterEmail(email);
+		 registerpage.enterPassword("2255r88");
+		 registerpage.enterConfirmPassword("2255r88");
+		 registerpage.clickRegister();
+
+		// --- Act: register with duplicate email
+		 driver.get("https://demowebshop.tricentis.com/register");
+		 registerpage.enterFirstName("rrr");
+		 registerpage.enterLastName("eee");
+		 registerpage.enterEmail(email);
+		 registerpage.enterPassword("2255r88");
+		 registerpage.enterConfirmPassword("2255r88");
+		 registerpage.clickRegister();
+		 
+		 // -- Assert: duplicate email error show
+		 Assert.assertTrue(registerpage.isDuplicateEmailErrorVisible() ,"'The specified email already exists' should be visible");
+
+	 }
+	 
 	 @Test
 	   public void testEmptyRequiredFields() {
 		 registerpage.clickRegister();
