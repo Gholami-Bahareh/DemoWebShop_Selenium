@@ -33,13 +33,14 @@ public class RegisterTest {
 	    public void setup() {
 	        System.setProperty("webdriver.chrome.driver","D:\\chromedriver-win64\\chromedriver.exe");
 	        driver = new ChromeDriver();
-	        driver.get("https://demowebshop.tricentis.com/register");
-	        registerpage = new RegisterPage(driver);
 	        driver.manage().window().maximize();
-	    }
+	        
+	        	    }
 	 
 	 @BeforeMethod
 	    public void generateEmail() {
+		 driver.get("https://demowebshop.tricentis.com/register");
+	     registerpage = new RegisterPage(driver);
 		 email= Utilities.randomEmail(); 
 	 }
 	
@@ -53,7 +54,11 @@ public class RegisterTest {
 		 registerpage.enterConfirmPassword("2255r88");
 		 registerpage.clickRegister();
 		 
+		 String expectedUrl = "https://demowebshop.tricentis.com/registerresult/1";
+		 
 		 Assert.assertTrue(registerpage.seeSuccessMessage(),"be successfull");
+		 Assert.assertEquals(driver.getCurrentUrl(), expectedUrl, "Redirected to new page"); //what if the URL changes?? ;)
+		 
 	             
     }
 	 @Test
@@ -67,8 +72,20 @@ public class RegisterTest {
 		 registerpage.clickRegister();
 		 
 		 Assert.assertTrue(registerpage.seeSuccessMessage(),"be successfull");
+		 Assert.assertTrue(driver.getCurrentUrl().contains("registerresult"), "Url contains 'registerresult'");
 	             
  }
+	 @Test
+	   public void testEmptyRequiredFields() {
+		 registerpage.clickRegister();
+		 
+		 Assert.assertTrue(registerpage.isFirstNameErrorVisible(), "ErrorMessageForFirstName should be visible");
+		 Assert.assertTrue(registerpage.isLastNameErrorVisible(), "ErrorMessageForLastName should be visible");
+		 Assert.assertTrue(registerpage.isEmailErrorVisible(), "ErrorMessageForEmail should be visible");
+		 Assert.assertTrue(registerpage.isPasswordErrorVisible(), "ErrorMessageForPassword should be visible");
+		 Assert.assertTrue(registerpage.isConfirmPasswordErrorVisible(), "ErrorMessageForConfirmPassword should be visible");
+		 
+	 }
 	 
 	 @AfterClass
 	    public void teardown() {

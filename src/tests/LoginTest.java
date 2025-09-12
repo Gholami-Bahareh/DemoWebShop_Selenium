@@ -44,6 +44,7 @@ public class LoginTest {
         loginPage.clickLoginExpectingFailure();
         
         Assert.assertTrue(loginPage.isLoginErrorVisible(), "Erroe message should be shown");
+        
     }
 
     @AfterClass

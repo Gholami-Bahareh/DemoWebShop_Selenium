@@ -30,6 +30,13 @@ public class RegisterPage {
     By confirmpasswordField = By.id("ConfirmPassword");
     By registerButton = By.id("register-button");
     By resultText = By.xpath("//div[@class='result']");
+    By firstNameError= By.xpath("//span[@for='FirstName']");
+    By lastNameError= By.xpath("//span[@for='LastName']");
+    By emailError= By.xpath("//span[@for='Email']");
+    By passwordError= By.xpath("//span[@for='Password']");
+    By confirmPasswordError= By.xpath("//span[@for='ConfirmPassword']");
+    
+  
     
     //Method
     
@@ -59,11 +66,7 @@ public class RegisterPage {
            WebElement emailBox = wait.until(ExpectedConditions.visibilityOfElementLocated(emailField));
            emailBox.clear();
            emailBox.sendKeys(email);   
-       }
-    
-    
-
-    
+       } 
    
     public void enterPassword(String password) {
         WebElement passwordBox = wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField));
@@ -86,6 +89,51 @@ public class RegisterPage {
     public boolean seeSuccessMessage() {
     	try {
         WebElement successText = wait.until(ExpectedConditions.visibilityOfElementLocated(resultText));
+        return successText.isDisplayed();   
+    	} catch (Exception e) {
+            return false; 
+        }
+    }
+    
+    public boolean isFirstNameErrorVisible() {
+    	try {
+        WebElement successText = wait.until(ExpectedConditions.visibilityOfElementLocated(firstNameError));
+        return successText.isDisplayed();   
+    	} catch (Exception e) {
+            return false; 
+        }
+    }
+    
+    public boolean isLastNameErrorVisible() {
+    	try {
+        WebElement successText = wait.until(ExpectedConditions.visibilityOfElementLocated(lastNameError));
+        return successText.isDisplayed();   
+    	} catch (Exception e) {
+            return false; 
+        }
+    }
+    
+    public boolean isEmailErrorVisible() {
+    	try {
+        WebElement successText = wait.until(ExpectedConditions.visibilityOfElementLocated(emailError));
+        return successText.isDisplayed();   
+    	} catch (Exception e) {
+            return false; 
+        }
+    }
+    
+    public boolean isPasswordErrorVisible() {
+    	try {
+        WebElement successText = wait.until(ExpectedConditions.visibilityOfElementLocated(passwordError));
+        return successText.isDisplayed();   
+    	} catch (Exception e) {
+            return false; 
+        }
+    }
+    
+    public boolean isConfirmPasswordErrorVisible() {
+    	try {
+        WebElement successText = wait.until(ExpectedConditions.visibilityOfElementLocated(confirmPasswordError));
         return successText.isDisplayed();   
     	} catch (Exception e) {
             return false; 
