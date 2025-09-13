@@ -6,6 +6,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CategoryPage {
@@ -25,6 +26,7 @@ public class CategoryPage {
 
     // متد برای گرفتن تعداد محصولات
     public int getNumberOfProducts() {
+    	wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(products));
         List<WebElement> productList = driver.findElements(products);
         return productList.size();
     }
