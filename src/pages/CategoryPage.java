@@ -1,6 +1,7 @@
 package pages;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -21,17 +22,27 @@ public class CategoryPage {
         }
     
     
- // Locator ساده برای لیست محصولات
+    // Locator
     By products = By.cssSelector(".product-item");
+    By titles = By.cssSelector(".product-title");
 
-    // متد برای گرفتن تعداد محصولات
+    // Methods
     public int getNumberOfProducts() {
     	wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(products));
         List<WebElement> productList = driver.findElements(products);
         return productList.size();
     }
     
-    // Locators
-    // Methods
+    public List<String> getProductTitles() { 
+    	List<WebElement> productTitle = driver.findElements(titles);
+    	List<String> titleText = new ArrayList<>();
+    	for (WebElement title : productTitle ) {
+    	 String text = title.getText();
+    	 titleText.add(text); 	}
+    	return titleText;
+    	 	
+    }
+    
+       
 	
 }
