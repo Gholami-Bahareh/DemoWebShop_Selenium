@@ -5,7 +5,6 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -13,6 +12,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import pages.CategoryPage;
+import pages.ProductPage;
 
 public class CategoryTest {
 	WebDriver driver;
@@ -51,17 +51,17 @@ public class CategoryTest {
         }
 	
 	@Test
-//	public void testProductDetail() {
-//		List<WebElement> titleLinks = categoryPage.getAllProductTitles();
-//		 for (int i = 0; i < titleLinks.size(); i++)
-//		{
-//			categoryPage.clickForDetail(i);
-//			titleLink.click();
-//			String shortDescription = categoryPage.getShortDescriptionInDetailProductPage();
-//			Assert.assertNotEquals(driver.getCurrentUrl(), "https://demowebshop.tricentis.com/books", "Urls should be different");
-//			driver.get("https://demowebshop.tricentis.com/books"); 
-//		}
-//	}
+	public void testProductDetail() {
+		List<WebElement> titleLinks = categoryPage.getAllProductTitles();
+		
+		 for (int i = 0; i < titleLinks.size(); i++)
+		{
+			ProductPage productpage  = categoryPage.clickForDetail(i);
+			Assert.assertNotEquals(driver.getCurrentUrl(), "https://demowebshop.tricentis.com/books", "Urls should be different");
+			Assert.assertTrue(productpage.isShortDescriptionVisible(), "Short Discription should be visible");
+			driver.get("https://demowebshop.tricentis.com/books"); 
+		}
+	}
 	
 	 @AfterClass
 	    public void teardown() {
