@@ -3,7 +3,9 @@ package tests;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -41,12 +43,25 @@ public class CategoryTest {
 	@Test
     public void testProductsTitleAreDisplayed() {
                         
-		List<String> titles = categoryPage.getProductTitles();
+		List<String> titles = categoryPage.getProductTitlesText();
 		for (String title : titles) {
 			Assert.assertFalse(title.isEmpty(),"A product has empty title!");
 			        
 		}
         }
+	
+	@Test
+//	public void testProductDetail() {
+//		List<WebElement> titleLinks = categoryPage.getAllProductTitles();
+//		 for (int i = 0; i < titleLinks.size(); i++)
+//		{
+//			categoryPage.clickForDetail(i);
+//			titleLink.click();
+//			String shortDescription = categoryPage.getShortDescriptionInDetailProductPage();
+//			Assert.assertNotEquals(driver.getCurrentUrl(), "https://demowebshop.tricentis.com/books", "Urls should be different");
+//			driver.get("https://demowebshop.tricentis.com/books"); 
+//		}
+//	}
 	
 	 @AfterClass
 	    public void teardown() {

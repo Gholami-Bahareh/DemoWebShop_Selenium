@@ -25,6 +25,7 @@ public class CategoryPage {
     // Locator
     By products = By.cssSelector(".product-item");
     By titles = By.cssSelector(".product-title");
+    By description = By.cssSelector(".short-description");
 
     // Methods
     public int getNumberOfProducts() {
@@ -33,16 +34,28 @@ public class CategoryPage {
         return productList.size();
     }
     
-    public List<String> getProductTitles() { 
+       
+    public List<String> getProductTitlesText() { 
     	List<WebElement> productTitle = driver.findElements(titles);
     	List<String> titleText = new ArrayList<>();
     	for (WebElement title : productTitle ) {
     	 String text = title.getText();
     	 titleText.add(text); 	}
-    	return titleText;
-    	 	
+    	return titleText;	 	
     }
     
-       
+    public List<WebElement> getAllProductTitles() {
+    	List<WebElement> productTitle = driver.findElements(titles);
+    	return productTitle;
+    }
+    
 	
+    public ProductPage clickForDetail(int index) {
+    	List<WebElement> productTitle = driver.findElements(titles);
+    	productTitle.get(index).click();
+    		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".short-description") )) ;    //a[@class='ico-logout']    
+            return new ProductPage(driver);
+    }
+  
+
 }
