@@ -7,8 +7,8 @@
         <methods>
           <include name="teardown"/>
           <include name="refresh"/>
-          <include name="setup"/>
           <include name="testProductDetail"/>
+          <include name="setup"/>
         </methods>
       </class> <!-- tests.CategoryTest -->
     </classes>

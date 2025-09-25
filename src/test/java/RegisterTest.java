@@ -1,4 +1,4 @@
-package tests;
+package test.java;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import pages.RegisterPage;
+import main.java.pages.RegisterPage;
 import utils.Utilities;
 
 public class RegisterTest {
