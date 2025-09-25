@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import main.java.pages.RegisterPage;
-import utils.Utilities;
+import main.java.utils.Utilities;
 
 public class RegisterTest {
 	 WebDriver driver;
