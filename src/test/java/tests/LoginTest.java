@@ -1,5 +1,5 @@
 
-package test.java.tests;
+package tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,8 +9,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import main.java.pages.HomePage;
-import main.java.pages.LoginPage;
+import pages.HomePage;
+import pages.LoginPage;
 
 public class LoginTest {
 

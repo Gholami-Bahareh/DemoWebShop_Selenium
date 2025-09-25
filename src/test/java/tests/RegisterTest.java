@@ -1,4 +1,4 @@
-package test.java.tests;
+package tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,8 +9,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import main.java.pages.RegisterPage;
-import main.java.utils.Utilities;
+import pages.RegisterPage;
+import utils.Utilities;
 
 public class RegisterTest {
 	 WebDriver driver;

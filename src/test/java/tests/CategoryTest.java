@@ -1,4 +1,4 @@
-package test.java.tests;
+package tests;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import main.java.pages.CategoryPage;
-import main.java.pages.ProductPage;
+import pages.CategoryPage;
+import pages.ProductPage;
 
 public class CategoryTest {
 	WebDriver driver;
@@ -28,7 +28,7 @@ public class CategoryTest {
 	@BeforeMethod
 	public void refresh() {
 		 driver.get("https://demowebshop.tricentis.com/books"); 
-	     categoryPage = new main.java.pages.CategoryPage(driver);
+	     categoryPage = new pages.CategoryPage(driver);
 	}
 	
 	
