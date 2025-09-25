@@ -29,8 +29,7 @@
   </dependencies>
   
   <build>
-    <sourceDirectory>src</sourceDirectory>
-    <testSourceDirectory>src/tests</testSourceDirectory> 
+   
     <plugins>
     <!-- Compiler plugin -->
       <plugin>
