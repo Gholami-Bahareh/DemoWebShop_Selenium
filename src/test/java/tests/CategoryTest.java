@@ -1,5 +1,7 @@
 package tests;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
@@ -27,6 +29,7 @@ public class CategoryTest {
         	    }
 	@BeforeMethod
 	public void refresh() {
+		System.out.println("refresh() running");
 		 driver.get("https://demowebshop.tricentis.com/books"); 
 	     categoryPage = new pages.CategoryPage(driver);
 	}
@@ -40,7 +43,7 @@ public class CategoryTest {
         Assert.assertTrue( productCount > 0,  "Expected product count > 0 but found " +  productCount);
         }
 	
-	@Test
+	@Test 
     public void testProductsTitleAreDisplayed() {
                         
 		List<String> titles = categoryPage.getProductTitlesText();
@@ -50,7 +53,7 @@ public class CategoryTest {
 		}
         }
 	
-	@Test
+	@Test 
 	public void testProductDetail() {
 		List<WebElement> titleLinks = categoryPage.getAllProductTitles();
 		
@@ -61,6 +64,31 @@ public class CategoryTest {
 			Assert.assertTrue(productpage.isShortDescriptionVisible(), "Short Discription should be visible");
 			driver.get("https://demowebshop.tricentis.com/books"); 
 		}
+	}
+	
+	@Test
+	public void testProductSortAToZ() {
+		List<String> titlesBefore = categoryPage.getProductTitlesText();
+		List<String> sortedAToZ = new ArrayList<>(titlesBefore);
+		Collections.sort(sortedAToZ);
+		
+		categoryPage.selectAToZ();
+		List<String> titlesAfter = categoryPage.getProductTitlesText();	
+//		Assert.assertNotEquals(titlesBefore, titlesAfter, "should not be the same");
+		Assert.assertEquals(sortedAToZ, titlesAfter, "should  be the same");
+	}
+	
+	@Test 
+	public void testPriceSort() {
+		List<Double> priceBefore = categoryPage.getProductPrice();
+		List<Double> sortedLowToHight = new ArrayList<>(priceBefore);
+		Collections.sort(sortedLowToHight);
+		
+		categoryPage.selectLowToHigh();
+		List<Double> pricesAfter = categoryPage.getProductPrice();
+		Assert.assertNotEquals(priceBefore, pricesAfter, "should not be the same");
+		Assert.assertEquals(sortedLowToHight, pricesAfter, "should  be the same");
+		
 	}
 	
 	 @AfterClass

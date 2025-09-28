@@ -1,41 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-15T11:12:57 CEST" name="Default suite" finished-at="2025-09-15T11:13:18 CEST" duration-ms="21168">
+  <suite started-at="2025-09-28T12:41:05 CEST" name="Default suite" finished-at="2025-09-28T12:41:32 CEST" duration-ms="27495">
     <groups>
     </groups>
-    <test started-at="2025-09-15T11:12:57 CEST" name="Default test" finished-at="2025-09-15T11:13:18 CEST" duration-ms="21168">
+    <test started-at="2025-09-28T12:41:05 CEST" name="Default test" finished-at="2025-09-28T12:41:32 CEST" duration-ms="27495">
       <class name="tests.CategoryTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.CategoryTest@179ece50]" started-at="2025-09-15T11:12:57 CEST" name="setup" finished-at="2025-09-15T11:13:03 CEST" duration-ms="6309" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:05 CEST" name="setup" finished-at="2025-09-28T12:41:11 CEST" duration-ms="5773" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="refresh()[pri:0, instance:tests.CategoryTest@179ece50]" started-at="2025-09-15T11:13:03 CEST" name="refresh" finished-at="2025-09-15T11:13:05 CEST" duration-ms="1553" status="PASS">
+        <test-method is-config="true" signature="refresh()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:11 CEST" name="refresh" finished-at="2025-09-28T12:41:12 CEST" duration-ms="1534" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- refresh -->
-        <test-method signature="testProductDetail()[pri:0, instance:tests.CategoryTest@179ece50]" started-at="2025-09-15T11:13:05 CEST" name="testProductDetail" finished-at="2025-09-15T11:13:16 CEST" duration-ms="11134" status="PASS">
+        <test-method signature="testPriceSort()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:12 CEST" name="testPriceSort" finished-at="2025-09-28T12:41:14 CEST" duration-ms="1632" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPriceSort -->
+        <test-method is-config="true" signature="refresh()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:14 CEST" name="refresh" finished-at="2025-09-28T12:41:15 CEST" duration-ms="594" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- refresh -->
+        <test-method signature="testProductDetail()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:15 CEST" name="testProductDetail" finished-at="2025-09-28T12:41:29 CEST" duration-ms="14124" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testProductDetail -->
-        <test-method is-config="true" signature="refresh()[pri:0, instance:tests.CategoryTest@179ece50]" started-at="2025-09-15T11:13:16 CEST" name="refresh" finished-at="2025-09-15T11:13:17 CEST" duration-ms="584" status="PASS">
+        <test-method is-config="true" signature="refresh()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:29 CEST" name="refresh" finished-at="2025-09-28T12:41:29 CEST" duration-ms="587" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- refresh -->
-        <test-method signature="testProductsAreDisplayed()[pri:0, instance:tests.CategoryTest@179ece50]" started-at="2025-09-15T11:13:17 CEST" name="testProductsAreDisplayed" finished-at="2025-09-15T11:13:17 CEST" duration-ms="79" status="PASS">
+        <test-method signature="testProductSortAToZ()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:29 CEST" name="testProductSortAToZ" finished-at="2025-09-28T12:41:30 CEST" duration-ms="1185" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testProductSortAToZ -->
+        <test-method is-config="true" signature="refresh()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:30 CEST" name="refresh" finished-at="2025-09-28T12:41:31 CEST" duration-ms="603" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- refresh -->
+        <test-method signature="testProductsAreDisplayed()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:31 CEST" name="testProductsAreDisplayed" finished-at="2025-09-28T12:41:31 CEST" duration-ms="61" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testProductsAreDisplayed -->
-        <test-method is-config="true" signature="refresh()[pri:0, instance:tests.CategoryTest@179ece50]" started-at="2025-09-15T11:13:17 CEST" name="refresh" finished-at="2025-09-15T11:13:17 CEST" duration-ms="578" status="PASS">
+        <test-method is-config="true" signature="refresh()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:31 CEST" name="refresh" finished-at="2025-09-28T12:41:32 CEST" duration-ms="551" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- refresh -->
-        <test-method signature="testProductsTitleAreDisplayed()[pri:0, instance:tests.CategoryTest@179ece50]" started-at="2025-09-15T11:13:17 CEST" name="testProductsTitleAreDisplayed" finished-at="2025-09-15T11:13:17 CEST" duration-ms="209" status="PASS">
+        <test-method signature="testProductsTitleAreDisplayed()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:32 CEST" name="testProductsTitleAreDisplayed" finished-at="2025-09-28T12:41:32 CEST" duration-ms="195" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testProductsTitleAreDisplayed -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.CategoryTest@179ece50]" started-at="2025-09-15T11:13:17 CEST" name="teardown" finished-at="2025-09-15T11:13:18 CEST" duration-ms="495" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:32 CEST" name="teardown" finished-at="2025-09-28T12:41:32 CEST" duration-ms="406" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

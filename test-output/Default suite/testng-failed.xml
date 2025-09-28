@@ -6,8 +6,8 @@
       <class name="tests.CategoryTest">
         <methods>
           <include name="teardown"/>
+          <include name="testProductSortAToZ"/>
           <include name="refresh"/>
-          <include name="testProductDetail"/>
           <include name="setup"/>
         </methods>
       </class> <!-- tests.CategoryTest -->
