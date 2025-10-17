@@ -20,14 +20,14 @@ public class CategoryTest {
 	WebDriver driver;
 	CategoryPage categoryPage;
 	
-	@BeforeClass
+	@BeforeClass(groups = {"regression"})
     public void setup() {
         System.setProperty("webdriver.chrome.driver","D:\\chromedriver-win64\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
                
         	    }
-	@BeforeMethod
+	@BeforeMethod(groups = {"regression"})
 	public void refresh() {
 		System.out.println("refresh() running");
 		 driver.get("https://demowebshop.tricentis.com/books"); 
@@ -91,7 +91,7 @@ public class CategoryTest {
 		
 	}
 	
-	 @AfterClass
+	 @AfterClass(groups = {"regression"})
 	    public void teardown() {
 	        driver.quit();
 	    }

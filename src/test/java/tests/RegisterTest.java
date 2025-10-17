@@ -28,7 +28,7 @@ public class RegisterTest {
 	//تست رفتار فرم بعد از ثبت (مثل پیام موفقیت یا ریدایرکت)
 	    
 	 
-	 @BeforeClass
+	 @BeforeClass(groups = {"smoke","regression"})
 	    public void setup() {
 	        System.setProperty("webdriver.chrome.driver","D:\\chromedriver-win64\\chromedriver.exe");
 	        driver = new ChromeDriver();
@@ -36,7 +36,7 @@ public class RegisterTest {
 	        
 	        	    }
 	 
-	 @BeforeMethod
+	 @BeforeMethod(groups = {"smoke","regression"})
 	    public void generateEmail() {
 		 driver.get("https://demowebshop.tricentis.com/register");
 	     registerpage = new RegisterPage(driver);
@@ -111,7 +111,7 @@ public class RegisterTest {
 		 
 	 }
 	 
-	 @AfterClass
+	 @AfterClass(groups = {"smoke","regression"})
 	    public void teardown() {
 	        driver.quit();
 	    }

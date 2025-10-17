@@ -18,7 +18,7 @@ public class LoginTest {
     WebDriverWait wait;
     LoginPage loginPage;
 
-    @BeforeClass
+    @BeforeClass(groups = {"smoke","regression"})
     public void setup() {
         System.setProperty("webdriver.chrome.driver","D:\\chromedriver-win64\\chromedriver.exe");
         driver = new ChromeDriver();
@@ -38,7 +38,7 @@ public class LoginTest {
         Assert.assertTrue(homePage.isLogoutVisible(), "کاربر باید لاگین شده باشد");
     }
     
-    @Test(groups = {"regression"})
+    @Test(groups = {"regression"})           
     public void invalidtestLogin() {
         loginPage.enterEmail("invalid@gmail.com");
         loginPage.enterPassword("000");
@@ -48,7 +48,7 @@ public class LoginTest {
         
     }
 
-    @AfterClass
+    @AfterClass(groups = {"smoke","regression"})
     public void teardown() {
         driver.quit();
     }
