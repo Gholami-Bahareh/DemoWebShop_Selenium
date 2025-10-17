@@ -60,7 +60,7 @@ public class RegisterTest {
 		 
 	             
     }
-	 @Test(groups = {"regression"})
+	 @Test(groups = {"regression", "woman"})
 	    public void validsuccessfulFemaleRegister() {
 		 registerpage.selectFemaleGender();
 		 registerpage.enterFirstName("rrr");
