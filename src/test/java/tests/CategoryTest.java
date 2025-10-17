@@ -35,7 +35,7 @@ public class CategoryTest {
 	}
 	
 	
-	@Test
+	@Test(groups = {"regression"})
     public void testProductsAreDisplayed() {
                         
         int productCount = categoryPage.getNumberOfProducts();
@@ -43,7 +43,7 @@ public class CategoryTest {
         Assert.assertTrue( productCount > 0,  "Expected product count > 0 but found " +  productCount);
         }
 	
-	@Test 
+	@Test(groups = {"regression"}) 
     public void testProductsTitleAreDisplayed() {
                         
 		List<String> titles = categoryPage.getProductTitlesText();
@@ -53,7 +53,7 @@ public class CategoryTest {
 		}
         }
 	
-	@Test 
+	@Test(groups = {"regression"}) 
 	public void testProductDetail() {
 		List<WebElement> titleLinks = categoryPage.getAllProductTitles();
 		
@@ -66,7 +66,7 @@ public class CategoryTest {
 		}
 	}
 	
-	@Test
+	@Test(groups = {"regression"})
 	public void testProductSortAToZ() {
 		List<String> titlesBefore = categoryPage.getProductTitlesText();
 		List<String> sortedAToZ = new ArrayList<>(titlesBefore);
@@ -78,7 +78,7 @@ public class CategoryTest {
 		Assert.assertEquals(sortedAToZ, titlesAfter, "should  be the same");
 	}
 	
-	@Test 
+	@Test(groups = {"regression"}) 
 	public void testPriceSort() {
 		List<Double> priceBefore = categoryPage.getProductPrice();
 		List<Double> sortedLowToHight = new ArrayList<>(priceBefore);

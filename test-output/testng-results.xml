@@ -1,61 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-28T12:41:05 CEST" name="Default suite" finished-at="2025-09-28T12:41:32 CEST" duration-ms="27495">
+  <suite started-at="2025-10-16T23:22:20 CEST" name="DemoWebShop Suite" finished-at="2025-10-16T23:23:21 CEST" duration-ms="60864">
     <groups>
     </groups>
-    <test started-at="2025-09-28T12:41:05 CEST" name="Default test" finished-at="2025-09-28T12:41:32 CEST" duration-ms="27495">
-      <class name="tests.CategoryTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:05 CEST" name="setup" finished-at="2025-09-28T12:41:11 CEST" duration-ms="5773" status="PASS">
+    <test started-at="2025-10-16T23:22:20 CEST" name="Login and Register Tests" finished-at="2025-10-16T23:22:56 CEST" duration-ms="35955">
+      <class name="tests.LoginTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@24313fcc]" started-at="2025-10-16T23:22:20 CEST" name="setup" finished-at="2025-10-16T23:22:29 CEST" duration-ms="8452" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="refresh()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:11 CEST" name="refresh" finished-at="2025-09-28T12:41:12 CEST" duration-ms="1534" status="PASS">
+        <test-method signature="invalidtestLogin()[pri:0, instance:tests.LoginTest@24313fcc]" started-at="2025-10-16T23:22:29 CEST" name="invalidtestLogin" finished-at="2025-10-16T23:22:31 CEST" duration-ms="1869" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidtestLogin -->
+        <test-method signature="validtestLogin()[pri:0, instance:tests.LoginTest@24313fcc]" started-at="2025-10-16T23:22:31 CEST" name="validtestLogin" finished-at="2025-10-16T23:22:34 CEST" duration-ms="3109" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validtestLogin -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@24313fcc]" started-at="2025-10-16T23:22:34 CEST" name="teardown" finished-at="2025-10-16T23:22:35 CEST" duration-ms="651" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.LoginTest -->
+      <class name="tests.RegisterTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.RegisterTest@131ef10]" started-at="2025-10-16T23:22:35 CEST" name="setup" finished-at="2025-10-16T23:22:38 CEST" duration-ms="3362" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="generateEmail()[pri:0, instance:tests.RegisterTest@131ef10]" started-at="2025-10-16T23:22:38 CEST" name="generateEmail" finished-at="2025-10-16T23:22:40 CEST" duration-ms="1635" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generateEmail -->
+        <test-method signature="registerWithDuplicateEmail()[pri:0, instance:tests.RegisterTest@131ef10]" started-at="2025-10-16T23:22:40 CEST" name="registerWithDuplicateEmail" finished-at="2025-10-16T23:22:47 CEST" duration-ms="7036" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registerWithDuplicateEmail -->
+        <test-method is-config="true" signature="generateEmail()[pri:0, instance:tests.RegisterTest@131ef10]" started-at="2025-10-16T23:22:47 CEST" name="generateEmail" finished-at="2025-10-16T23:22:47 CEST" duration-ms="506" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generateEmail -->
+        <test-method signature="testEmptyRequiredFields()[pri:0, instance:tests.RegisterTest@131ef10]" started-at="2025-10-16T23:22:47 CEST" name="testEmptyRequiredFields" finished-at="2025-10-16T23:22:48 CEST" duration-ms="731" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEmptyRequiredFields -->
+        <test-method is-config="true" signature="generateEmail()[pri:0, instance:tests.RegisterTest@131ef10]" started-at="2025-10-16T23:22:48 CEST" name="generateEmail" finished-at="2025-10-16T23:22:48 CEST" duration-ms="511" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generateEmail -->
+        <test-method signature="validsuccessfulFemaleRegister()[pri:0, instance:tests.RegisterTest@131ef10]" started-at="2025-10-16T23:22:48 CEST" name="validsuccessfulFemaleRegister" finished-at="2025-10-16T23:22:52 CEST" duration-ms="3364" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validsuccessfulFemaleRegister -->
+        <test-method is-config="true" signature="generateEmail()[pri:0, instance:tests.RegisterTest@131ef10]" started-at="2025-10-16T23:22:52 CEST" name="generateEmail" finished-at="2025-10-16T23:22:52 CEST" duration-ms="561" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generateEmail -->
+        <test-method signature="validsuccessfulMaleRegister()[pri:0, instance:tests.RegisterTest@131ef10]" started-at="2025-10-16T23:22:52 CEST" name="validsuccessfulMaleRegister" finished-at="2025-10-16T23:22:56 CEST" duration-ms="3379" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validsuccessfulMaleRegister -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.RegisterTest@131ef10]" started-at="2025-10-16T23:22:56 CEST" name="teardown" finished-at="2025-10-16T23:22:56 CEST" duration-ms="501" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.RegisterTest -->
+    </test> <!-- Login and Register Tests -->
+    <test started-at="2025-10-16T23:22:56 CEST" name="Category Tests" finished-at="2025-10-16T23:23:21 CEST" duration-ms="24736">
+      <class name="tests.CategoryTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.CategoryTest@117e949d]" started-at="2025-10-16T23:22:56 CEST" name="setup" finished-at="2025-10-16T23:22:59 CEST" duration-ms="2932" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="refresh()[pri:0, instance:tests.CategoryTest@117e949d]" started-at="2025-10-16T23:22:59 CEST" name="refresh" finished-at="2025-10-16T23:23:01 CEST" duration-ms="1493" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- refresh -->
-        <test-method signature="testPriceSort()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:12 CEST" name="testPriceSort" finished-at="2025-09-28T12:41:14 CEST" duration-ms="1632" status="PASS">
+        <test-method signature="testPriceSort()[pri:0, instance:tests.CategoryTest@117e949d]" started-at="2025-10-16T23:23:01 CEST" name="testPriceSort" finished-at="2025-10-16T23:23:03 CEST" duration-ms="1877" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testPriceSort -->
-        <test-method is-config="true" signature="refresh()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:14 CEST" name="refresh" finished-at="2025-09-28T12:41:15 CEST" duration-ms="594" status="PASS">
+        <test-method is-config="true" signature="refresh()[pri:0, instance:tests.CategoryTest@117e949d]" started-at="2025-10-16T23:23:03 CEST" name="refresh" finished-at="2025-10-16T23:23:03 CEST" duration-ms="700" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- refresh -->
-        <test-method signature="testProductDetail()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:15 CEST" name="testProductDetail" finished-at="2025-09-28T12:41:29 CEST" duration-ms="14124" status="PASS">
+        <test-method signature="testProductDetail()[pri:0, instance:tests.CategoryTest@117e949d]" started-at="2025-10-16T23:23:03 CEST" name="testProductDetail" finished-at="2025-10-16T23:23:17 CEST" duration-ms="13462" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testProductDetail -->
-        <test-method is-config="true" signature="refresh()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:29 CEST" name="refresh" finished-at="2025-09-28T12:41:29 CEST" duration-ms="587" status="PASS">
+        <test-method is-config="true" signature="refresh()[pri:0, instance:tests.CategoryTest@117e949d]" started-at="2025-10-16T23:23:17 CEST" name="refresh" finished-at="2025-10-16T23:23:18 CEST" duration-ms="702" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- refresh -->
-        <test-method signature="testProductSortAToZ()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:29 CEST" name="testProductSortAToZ" finished-at="2025-09-28T12:41:30 CEST" duration-ms="1185" status="PASS">
+        <test-method signature="testProductSortAToZ()[pri:0, instance:tests.CategoryTest@117e949d]" started-at="2025-10-16T23:23:18 CEST" name="testProductSortAToZ" finished-at="2025-10-16T23:23:19 CEST" duration-ms="1461" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testProductSortAToZ -->
-        <test-method is-config="true" signature="refresh()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:30 CEST" name="refresh" finished-at="2025-09-28T12:41:31 CEST" duration-ms="603" status="PASS">
+        <test-method is-config="true" signature="refresh()[pri:0, instance:tests.CategoryTest@117e949d]" started-at="2025-10-16T23:23:19 CEST" name="refresh" finished-at="2025-10-16T23:23:20 CEST" duration-ms="632" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- refresh -->
-        <test-method signature="testProductsAreDisplayed()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:31 CEST" name="testProductsAreDisplayed" finished-at="2025-09-28T12:41:31 CEST" duration-ms="61" status="PASS">
+        <test-method signature="testProductsAreDisplayed()[pri:0, instance:tests.CategoryTest@117e949d]" started-at="2025-10-16T23:23:20 CEST" name="testProductsAreDisplayed" finished-at="2025-10-16T23:23:20 CEST" duration-ms="86" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testProductsAreDisplayed -->
-        <test-method is-config="true" signature="refresh()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:31 CEST" name="refresh" finished-at="2025-09-28T12:41:32 CEST" duration-ms="551" status="PASS">
+        <test-method is-config="true" signature="refresh()[pri:0, instance:tests.CategoryTest@117e949d]" started-at="2025-10-16T23:23:20 CEST" name="refresh" finished-at="2025-10-16T23:23:20 CEST" duration-ms="566" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- refresh -->
-        <test-method signature="testProductsTitleAreDisplayed()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:32 CEST" name="testProductsTitleAreDisplayed" finished-at="2025-09-28T12:41:32 CEST" duration-ms="195" status="PASS">
+        <test-method signature="testProductsTitleAreDisplayed()[pri:0, instance:tests.CategoryTest@117e949d]" started-at="2025-10-16T23:23:20 CEST" name="testProductsTitleAreDisplayed" finished-at="2025-10-16T23:23:21 CEST" duration-ms="200" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testProductsTitleAreDisplayed -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.CategoryTest@55b0dcab]" started-at="2025-09-28T12:41:32 CEST" name="teardown" finished-at="2025-09-28T12:41:32 CEST" duration-ms="406" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.CategoryTest@117e949d]" started-at="2025-10-16T23:23:21 CEST" name="teardown" finished-at="2025-10-16T23:23:21 CEST" duration-ms="590" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- tests.CategoryTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Category Tests -->
+  </suite> <!-- DemoWebShop Suite -->
 </testng-results>

@@ -27,7 +27,8 @@ public class LoginTest {
         driver.manage().window().maximize();
     }
 
-    @Test
+    
+    @Test(groups = {"smoke", "regression"})
     public void validtestLogin() {
         loginPage.enterEmail("bahareh.r2m2@gmail.com");
         loginPage.enterPassword("123456");
@@ -37,7 +38,7 @@ public class LoginTest {
         Assert.assertTrue(homePage.isLogoutVisible(), "کاربر باید لاگین شده باشد");
     }
     
-    @Test
+    @Test(groups = {"regression"})
     public void invalidtestLogin() {
         loginPage.enterEmail("invalid@gmail.com");
         loginPage.enterPassword("000");

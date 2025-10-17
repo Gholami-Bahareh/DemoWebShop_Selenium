@@ -43,7 +43,7 @@ public class RegisterTest {
 		 email= Utilities.randomEmail(); 
 	 }
 	
-	 @Test
+	 @Test(groups = {"smoke","regression"})
 	    public void validsuccessfulMaleRegister() {
 		 registerpage.selectMaleGender();
 		 registerpage.enterFirstName("rrr");
@@ -60,7 +60,7 @@ public class RegisterTest {
 		 
 	             
     }
-	 @Test
+	 @Test(groups = {"regression"})
 	    public void validsuccessfulFemaleRegister() {
 		 registerpage.selectFemaleGender();
 		 registerpage.enterFirstName("rrr");
@@ -74,7 +74,7 @@ public class RegisterTest {
 		 Assert.assertTrue(driver.getCurrentUrl().contains("registerresult"), "Url contains 'registerresult'");
 	             
      }
-	 @Test
+	 @Test(groups = {"regression"})
 	   public void registerWithDuplicateEmail() {
 		// --- Arrange:first time register
 		 registerpage.selectFemaleGender();
@@ -99,7 +99,7 @@ public class RegisterTest {
 
 	 }
 	 
-	 @Test
+	 @Test(groups = {"regression"})
 	   public void testEmptyRequiredFields() {
 		 registerpage.clickRegister();
 		 
