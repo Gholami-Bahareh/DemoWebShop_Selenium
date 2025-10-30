@@ -1,7 +1,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="DemoWebShopSuite">
+<suite name="DemoWebShopSuite" parallel="tests" thread-count="2">
 
- 
+<!--
+<suite name="DemoWebShopSuite" parallel="classes" thread-count="3">
+<suite name="DemoWebShopSuite" parallel="methods" thread-count="5">
+-->
+
   <test name="SmokeTests">
     <groups>
       <run>
@@ -25,6 +29,5 @@
       <package name="tests"/>
     </packages>
   </test>
-
 
 </suite>
